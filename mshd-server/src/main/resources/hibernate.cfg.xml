@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- 配置数据库的相关信息 -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mydb</property>
+        <!-- 配置数据库的方言 比如在mysql里面有关键字 limit ，只能使用在mysql里面
+            让hibernate识别到不同数据库自己特有的语句 -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+
+        <!-- 配置hibernate的相关信息 -->
+        <!-- 是否显示底层的sql语句 -->
+        <property name="hibernate.show_sql">true</property>
+        <!-- 是否格式化sql语句 -->
+        <property name="hibernate.format_sql">true</property>
+        <!-- hibernate会帮自己创建数据库表，默认不会创建，需要配置。
+            值 update： 如果数据库里面不存在表，创建；如果已经存在，更新 -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <mapping class="com.example.demo.pojo.BrickwoodstructureEntity"/>
+        <mapping class="com.example.demo.pojo.CivilstructureEntity"/>
+        <mapping class="com.example.demo.pojo.CollapserecordEntity"/>
+        <mapping class="com.example.demo.pojo.CommdisasterEntity"/>
+        <mapping class="com.example.demo.pojo.CrackrecordEntity"/>
+        <mapping class="com.example.demo.pojo.DeathstatisticsEntity"/>
+        <mapping class="com.example.demo.pojo.DebrisrecordEntity"/>
+        <mapping class="com.example.demo.pojo.DisasterinfoEntity"/>
+        <mapping class="com.example.demo.pojo.DisasterpredictionEntity"/>
+        <mapping class="com.example.demo.pojo.DisasterrequestEntity"/>
+        <mapping class="com.example.demo.pojo.FrameworkstructureEntity"/>
+        <mapping class="com.example.demo.pojo.GasdisasterEntity"/>
+        <mapping class="com.example.demo.pojo.InjuredstatisticsEntity"/>
+        <mapping class="com.example.demo.pojo.IrrigationdisasterEntity"/>
+        <mapping class="com.example.demo.pojo.KarstrecordEntity"/>
+        <mapping class="com.example.demo.pojo.LandsliderecordEntity"/>
+        <mapping class="com.example.demo.pojo.MasonrystructureEntity"/>
+        <mapping class="com.example.demo.pojo.MissingstatisticsEntity"/>
+        <mapping class="com.example.demo.pojo.OildisasterEntity"/>
+        <mapping class="com.example.demo.pojo.OtherrecordEntity"/>
+        <mapping class="com.example.demo.pojo.OtherstructureEntity"/>
+        <mapping class="com.example.demo.pojo.PowerdisasterEntity"/>
+        <mapping class="com.example.demo.pojo.SettlementrecordEntity"/>
+        <mapping class="com.example.demo.pojo.TrafficdisasterEntity"/>
+        <mapping class="com.example.demo.pojo.WaterdisasterEntity"/>
+
+        <!-- 配置事务自动提交 -->
+        <!-- <property name="hibernate.connection.autocommit">true</property> -->
+
+        <!-- 引入映射配置文件 -->
+
+    </session-factory>
+</hibernate-configuration>
